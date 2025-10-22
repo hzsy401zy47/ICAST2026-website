@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Tooplate">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <title>ArtXibition Ticket Detail Page</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/tooplate-artxibition.css">
+
+    <style>
+        /* 讓該說明文字比一般段落大一點，但不要比標題大 */
+        .tickets-lead {
+        font-size: 1.125rem; /* 可調：1rem 為預設，增大到 1.125rem */
+        line-height: 1.4;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+        }
+
+        /* 小螢幕適度回縮 */
+        @media (max-width: 767px) {
+        .tickets-lead { font-size: 1rem; }
+        }
+         /* 讓左右欄同高，並使左欄圖片只佔剩餘空間（不會超過右欄底部） */
+        .amazing-venues .row {
+        align-items: stretch; /* 使 .col-* 同列等高 */
+        }
+
+        /* 左欄內部容器：文字在上、圖片在下，圖片填滿剩餘高度但會等比例縮放 */
+        .col-lg-9 .left-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        }
+
+        .col-lg-9 .left-inner .left-content {
+        flex: 0 0 auto; /* 文字區塊按內容高度 */
+        }
+
+        /* 圖片區塊：佔剩餘空間，等比例縮放，不會超出右欄高度 */
+        .col-lg-9 .left-inner .bottom-image {
+        flex: 1 1 auto;
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
+        display: block;
+        margin-top: 16px; /* 與文字的間距，可調整 */
+        }
+
+        /* ===== Keynote speakers styles ===== */
+        .speakers-list .speaker {
+          margin-bottom: 28px;
+          border-bottom: 1px solid #eee;
+          padding-bottom: 20px;
+        }
+        .speaker-name {
+          font-size: 1.35rem; /* 大號字 */
+          font-weight: 700;
+          margin: 8px 0;
+        }
+        .speaker-photo {
+          max-width: 220px;
+          width: 100%;
+          height: auto;
+          display: block;
+          margin: 8px 0 12px;
+        }
+        .speaker-title {
+          font-size: 1.05rem; /* 中號字 */
+          font-weight: 600;
+          margin: 6px 0;
+        }
+        .speaker-abstract {
+          font-size: 0.95rem; /* 小一號字 */
+          color: #444;
+          margin: 6px 0 0;
+        }
+        @media (max-width: 767px) {
+          .speaker-photo { max-width: 100%; }
+          .speaker-name { font-size: 1.15rem; }
+        }
+    </style>
+<!--
+
+Tooplate 2125 ArtXibition
+
+https://www.tooplate.com/view/2125-artxibition
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    
+    <!-- ***** Pre HEader ***** -->
+    <div class="pre-header" role="region" aria-label="Event announcement">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <span id="preHeaderText">Hey! The conference is Starting in <strong id="daysRemaining">15</strong> Days.</span>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="text-button">
+                        <a href="rent-venue.html" class="btn" aria-label="Contact us about renting a venue">Contact Us Now! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">ICAST<em>2026</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li> 
+                            <li><a href="tickets.html">Registration</a></li>
+                            <li><a href="shows-events.html">Submission</a></li> 
+                            <li><a href="ticket-details.html" class="active">Program</a></li>
+                            <li><a href="event-details.html">Attraction</a></li>
+                            <li><a href="rent-venue.html">Venue</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+     <div class="amazing-venues">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="left-inner">
+                        <div class="left-content">
+                            <h2>Conference Program and Abstracts</h2>
+                            <p class="tickets-lead">The conference program and abstracts are available to <a href="assets/doc/ICAST2026_program_and_abstracts_book.pdf" download>here</a> here in pdf format!</p>
+                            <img class="bottom-image" src="assets/images/ICAST_program.png" alt="left column image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="right-content">
+                        <h5><i class="fa fa-calendar"></i> Important Dates</h5>
+                        <span>Abstract Deadline: <br> December 15, 2025</span>
+                        <span>Author notification: <br> January 15, 2026</span>
+                        <span>Full paper(optional)deadline for pdf proceedings: <br> june 15, 2026</span>
+                        <span>Journal special issue deadline: <br> By invitation shortly after June 15</span>
+                        <div class="text-button"><a href="tickets.html">Register Now! <i class="fa fa-arrow-right"></i></a></div>
+                    </div>
+                    <div class="right-content">
+                        <h5><i class="fa fa-book"></i> Paper Template</h5>
+                        <p><a href="assets/doc/ICAST2026_paper_template.docx" download>Here</a> is the paper template. Full papers are optional (due by June 15), but are required for Special Issue (SI) consideration to appear in <a href="https://iopscience.iop.org/journal/0964-1726" target="_blank" rel="noopener">Smart Materials and Structures (IOP)</a>. Selected papers will be invited promptly for submission to SI for peer review.</p>
+                    </div>
+                    <div class="right-content">
+                        <h5><i class="fa fa-flag"></i> Poster Template</h5>
+                        <p>You can download from <a href="assets/doc/ICAST2026_poster_template.pptx" download>Here</a>. If you would like us to print, email by May 15! Alternatively, you are welcome to print and bring to the conference.</p>
+                    </div>
+                    <div class="right-content">
+                        <p>Please email us by May 17 to indicate if you are a student and interested in participating in the best poster competition</p>
+                    </div>
+                    <div class="right-content">
+                        <h5><i class="fa fa-envelope"></i> Contact Us</h5>
+                        <p>Email: <a href="mailto:yzhangtk@connect.ust.hk"><EMAIL>yzhangtk@connect.ust.hk</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="left-inner">
+                        <div class="left-content">
+                            <h2>Keynote speakers</h2>
+
+                            <div class="speakers-list">
+                                <!-- Speaker 1 -->
+                                <div class="speaker">
+                                    <div class="speaker-name">Prof. Paolo Ermanni - ETH Zurich</div>
+                                    <img src="assets/images/paolo ermanni.jpg" alt="Prof. Paolo Ermanni" class="speaker-photo img-fluid">
+                                    <div class="speaker-title">Structural approaches for adaptive biomedical and aerospace systems</div>
+                                    <p class="speaker-abstract"><strong>Abstract:</strong> High performance fiber reinforced polymers (FRP) are layered anisotropic materials. The fiber architecture can be tuned to tailor material properties and deformation behavior, thus allowing the realization of structural systems with amazing structural features, including extreme deformability, shape deformation and reconfigurability. The talk is presenting and discussing various design approaches, mechanisms, and applications for adaptive composite-based load-carrying systems. The presented concepts consider selective inner compliance, as well as passive and semi-active variable stiffness solutions. Controlled elastic instability and integration of multi-stable elements provide additional mechanisms to induce nonlinear variable stiffness response and therefore achieving selective deformability in load-carrying lightweight structures. The integration of FRPs elements into mechanical metamaterials is further expanding the potential of composite materials for multi-functional lightweight applications, by adding additional geometrical parameters and tunability of the repeating unit cell. A promising concept is relying on FRP shell metastructures consisting of a thin FRP-frame and a pre-stretched soft polymer membrane. The instability of the initially flat component is inducing a rich multi-stable behavior, being a first step towards the realization of programmable structures, which can morph to multiple 3D shapes from an initial flat configuration upon an external stimulus. Finally, we are currently exploring the mechanical behavior and the potential of very thin composite shells made from continuously fiber reinforced Polyether ether ketone (PEEK). Those composite materials are capable of withstanding large bending curvatures without failure and are therefore pre-destined for applications, which require a high degree of deformability for shape adaptation and deployment purposes. Applicability of thin fiber reinforced PEEK shells in selected biomedical and space systems will be discussed.</p>
+                                    <p class="speaker-abstract"><strong>Bio:</strong> Paolo Ermanni has been Professor and Director of the Laboratory of Composite Materials and Adaptive Structures (CMASLab) in the Department of Mechanical and Process Engineering of ETH Zurich since 1998 (Associate Professor until March 2003 and Full Professor thereafter). Ermanni holds a master's degree in mechanical engineering and a Doctoral degree from ETH Zurich. He spent more than five years at Airbus in Hamburg (D) as a senior engineer and later on, as a project manager, mainly dealing with structural and technological challenges related to the realisation of a second generation of civil supersonic aircraft. In 1997, he took on a new position as a strategic consultant-manager at Kearney in Milan (Italy). Ermanni's research is inspired by real-world engineering problems and is concerned with the exploration of innovative designs, material architectures and advanced manufacturing processes. Ultimate goal is to improve the efficiency and reliability of high-performance composite materials and lightweight structural systems. Current research interests include shape adaptation for morphing and reconfigurable systems, composite metamaterials and advanced processing routes for high performance thermoplastic composites.</p>
+                                </div>
+
+                                <!-- Speaker 2 -->
+                                <div class="speaker">
+                                    <div class="speaker-name">Prof. Diann Brei - University of Michigan</div>
+                                    <img src="assets/images/diann brei.jpg" alt="Prof. Diann Brei" class="speaker-photo img-fluid">
+                                    <div class="speaker-title">Adaptive inflatable structures for avant garde automotive and medical applications</div>
+                                    <p class="speaker-abstract"><strong>Abstract:</strong> We are on the advent of the next technological revolution. All around us our world is undergoing rapid transformative change, from mobility to medical breakthroughs. The field of adaptive structures is well positioned to play a pivotal role by providing crucial capabilities in morphing, energy absorption, active deployment, and many more. While the structures and machines from the industrial revolution were inherently hard and inflexible in nature, emerging inflatable adaptive structures can radically change their properties, shapes and behavior in a “softer” controlled manner. Combining soft inflatable structures with rigid and tensile constraint elements provides more and unique functionality with higher structural performance. One example of this is tendon-constrained inflatable interior walls within autonomous vehicles that can actively deploy to softly capture occupants and cargo while absorbing harmful energy. Similarly, an active inflatable cowling can gently cover windshield wipers from leaves and snow, yet as needed can open rigidly against aerodynamic loads using an advanced tile-based layered-bladder approach. Adaptive inflatable structures can also be used to enhance the quality of life in medical applications. A good example of where adaptive inflatable structural properties can be tailored is tendon-constrained headrest for wheelchairs that can support neck flexion stabilizing the head, while enabling rotation or other directional motions with only light resistance enabling users to move in directions that they have muscular strength. Through highlighting several avant garde applications within the automotive and medical sector, this talk will explore inflatable adaptive structures and their underlying behavioral science to understand the highly tailorable functionality gained through advanced internal architectural arrangements such as tendon-constrained and novel tile and constrained-layer techniques.</p>
+                                    <p class="speaker-abstract"><strong>Bio:</strong> Dr. Diann Brei Professor of Mechanical Engineering and former Chair of the Integrative Systems + Design Division at the University of Michigan. She received her PhD (1993) in Mechanical Engineering and her BSE (1988) in Computer Systems Engineering (1988). Her research is focused on the underling design science for device innovation using smart materials. Her smart material architectural models along with her multi-domain, multi-stage design methods have set the foundation for a successful translational research and development paradigm adopted by industries in the automotive, medical and aerospace sectors. Dr. Brei who is an ASME Fellow and AIAA Associate Fellow, has been an active leader in the smart materials and structures community recognized by the ASME Machine Design Award, ASME Adaptive Structures and Material Systems Award, SPIE Lifetime Achievement Award SSM and the ASME Distinguished Service Award.</p>
+                                </div>
+
+                                <!-- Speaker 3 -->
+                                <div class="speaker">
+                                    <div class="speaker-name">Prof. Norman M. Wereley - University of Maryland</div>
+                                    <img src="assets/images/Norman m wereley.jpeg" alt="Prof. Norman M. Wereley" class="speaker-photo img-fluid">
+                                    <div class="speaker-title">Energy absorption strategies for occupant protection</div>
+                                    <p class="speaker-abstract"><strong>Abstract:</strong> The ability to dissipate energy in vehicle systems, especially with the goal of protecting occupants from potentially injurious vibration, repetitive shock, crash and blast loads, is becoming a critical issue as the cumulative impact of these load spectra on chronic health and acute injury are becoming better understood. The objective of this talk is to discuss what properties are optimal for energy absorption (EA) applications such impact or shock load mitigation. Two primary strategies will be discussed in this talk: passive vs. semi-active energy absorbers. The first focus is the use of crushable materials to absorb energy. Two classes of passive materials will be discussed for EA applications including sintered and composite hollow glass foam materials, as well as elastomeric or plastic cellular materials. The second focus is the use of magnetorheological fluids (MRFs) in EA applications. The properties of the MRF can be optimized for a particular application. A number of key nondimensional parameters can be used to gain insight into how to define optimality for various applications including: Bingham number, Hedstrom number, Reynolds number, Mason number, dynamic range. Also, the trade-offs associated in designing an optimal MRF for a particular application are discussed. The advantages of passive versus semi-active EA strategies will be discussed.</p>
+                                    <p class="speaker-abstract"><strong>Bio:</strong> Dr. Wereley is the Minta Martin Professor in the Department of Aerospace Engineering at University of Maryland. His current research interests are focused on active and passive vibration and shock mitigation (especially occupant protection systems) using primarily magnetorheological materials, and soft actuators and soft robotic systems. Dr. Wereley has published over 260 journal articles, 20 book chapters, over 275 conference articles, and over 20 patents. Dr. Wereley is the Editor-in-Chief of SAMPE Journal and Editor of the Journal of Intelligent Material Systems and Structures. He also serves as an associate editor of Smart Materials and Structures, MDPI Actuators, and others. Dr. Wereley is the recipient of the ASME Adaptive Structures and Material Systems Prize (2012) and the SPIE Smart Structures and Materials Lifetime Achievement Award (2013). Dr. Wereley is a Fellow of AIAA, RAeS, VFS, ASME, SPIE, and the Institute of Physics. He is also a Senior Member of IEEE. Dr. Wereley has a B.Eng. (1982) from McGill University and M.S. (1987) and Ph.D. (1990) from the Massachusetts Institute of Technology.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- ***** About Us Page ***** 
+    <div class="page-heading-shows-events">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Tickets On Sale Now!</h2>
+                    <span>Check out upcoming and past shows & events and grab your ticket right now.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ticket-details-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="left-image">
+                        <img src="assets/images/ticket-details.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="right-content">
+                        <h4>Sunny Hill Festival</h4>
+                        <span>240 Tickets still available</span>
+                        <ul>
+                            <li><i class="fa fa-clock-o"></i> Thursday 18:00 to 22:00</li>
+                            <li><i class="fa fa-map-marker"></i>Copacabana Beach, Rio de Janeiro</li>
+                        </ul>
+                        <div class="quantity-content">
+                            <div class="left-content">
+                                <h6>Standard Ticket</h6>
+                                <p>$65 per ticket</p>
+                            </div>
+                            <div class="right-content">
+                                <div class="quantity buttons_added">
+                                    <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <h4>Total: $210.00</h4>
+                            <div class="main-dark-button"><a href="#">Purchase Tickets</a></div>
+                        </div>
+                        <div class="warn">
+                            <p>*You Can Only Buy 10 Tickets For This Show</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    *** Subscribe *** 
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>Subscribe Our Newsletter:</h4>
+                </div>
+                <div class="col-lg-8">
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-3">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button">Submit</button>
+                            </fieldset>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- *** Footer *** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="address">
+                        <h4>HKUST</h4>
+                        <span>Clear Water Bay, <br>Kowloon<br>Hong Kong</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="https://pathadvisor.ust.hk/from/to/ROOM%201104;KETJ3jsuiZ4s;1;780,492/floor/1/at/normalized/780,492,4">Map of school</a></li>
+                            <li><a href="rent-venue.html">Venues and traffics</a></li>
+                            <li><a href="https://hkust.edu.hk/">About HKUST</a></li>
+                            <li><a href="https://www.discoverhongkong.com/tc/index.html">Travel in Hong Kong</a></li>
+                            <li><a href="mailto:yzhangtk@connect.ust.hk"><EMAIL>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="hours">
+                        <h4>Important Dates</h4>
+                        <ul>
+                            <li>Abstract deadline: December 15, 2025</li>
+                            <li>Author notification: January 15, 2024  1月 15, 2026</li>
+                            <li>Full paper deadline: June 15, 2026</li>
+                            <li>Journal special issue deadline: After June 15</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <p>Welcome to ICAST 2026</p>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <p class="copyright">Copyright 2021 ArtXibition Company 
+                    
+                    			<br>Design: <a rel="nofollow" href="https://www.tooplate.com" target="_parent">Tooplate</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="sub-footer">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="logo"><span>ICAST<em>2026</em></span></div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="menu">
+                                    <ul>
+                                        <li><a href="index.html" class="active">Home</a></li>
+                                        <li><a href="about.html">About</a></li> 
+                                        <li><a href="tickets.html">Registration</a></li>
+                                        <li><a href="shows-events.html">Submission</a></li> 
+                                        <li><a href="venue.html">Program</a></li>
+                                        <li><a href="contact.html">Attraction</a></li>
+                                        <li><a href="rent-venue.html">Venue</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/mixitup.js"></script> 
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <!-- Unified countdown (替换掉之前的 Dynamic pre-header days counter) -->
+    <script>
+    (function(){
+      // 设置目标开幕日期（请根据需要修改，采用 UTC 时间避免时区差异）
+      var target = new Date('2026-05-20T00:00:00Z');
+
+      function updateAll(){
+        var now = new Date();
+        var diffMs = target - now;
+        if (isNaN(diffMs)) return;
+
+        var totalSeconds = Math.max(0, Math.floor(diffMs / 1000));
+        var days = Math.floor(totalSeconds / 86400);
+        var hours = Math.floor((totalSeconds % 86400) / 3600);
+        var minutes = Math.floor((totalSeconds % 3600) / 60);
+        var seconds = totalSeconds % 60;
+
+        var elDays = document.getElementById('days');
+        var elHours = document.getElementById('hours');
+        var elMinutes = document.getElementById('minutes');
+        var elSeconds = document.getElementById('seconds');
+        var elDaysRemaining = document.getElementById('daysRemaining');
+        var preHeaderText = document.getElementById('preHeaderText');
+
+        if (elDays) elDays.textContent = days;
+        if (elHours) elHours.textContent = ('0'+hours).slice(-2);
+        if (elMinutes) elMinutes.textContent = ('0'+minutes).slice(-2);
+        if (elSeconds) elSeconds.textContent = ('0'+seconds).slice(-2);
+        if (elDaysRemaining) elDaysRemaining.textContent = days;
+
+        if (diffMs > 0) {
+          if (preHeaderText) preHeaderText.setAttribute('aria-live', 'polite');
+        } else if (diffMs > -24*60*60*1000) {
+          if (preHeaderText) preHeaderText.textContent = 'The show is today!';
+        } else {
+          if (preHeaderText) preHeaderText.textContent = 'The show has started.';
+        }
+      }
+
+      updateAll();
+      // 每秒更新，保持秒表同步
+      setInterval(updateAll, 1000);
+    })();
+    </script>
+  </body>
+
+</html>

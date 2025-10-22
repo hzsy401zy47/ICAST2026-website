@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Tooplate">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <title>ArtXibition Template - Rent a venue</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/tooplate-artxibition.css">
+
+    <style>
+/* 讓該說明文字比一般段落大一點，但不要比標題大 */
+.tickets-lead {
+  font-size: 1.125rem; /* 可調：1rem 為預設，增大到 1.125rem */
+  line-height: 1.4;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+/* 小螢幕適度回縮 */
+@media (max-width: 767px) {
+  .tickets-lead { font-size: 1rem; }
+}
+
+/* 縮短 "Welcome to Hong Kong!" 標題上下行距 */
+.tickets-page .heading {
+  margin-top: 16px;    /* 標題上方空間，依需要調整 */
+  margin-bottom: 16px; /* 標題下方空間，依需要調整 */
+  padding: 0;
+}
+.tickets-page .heading h2 {
+  margin: 0;          /* 移除 h2 預設上下 margin */
+  padding: 0;
+  line-height: 1.15;
+}
+.tickets-page .tickets-lead {
+  margin-top: 6px;    /* 第一段與標題之間的距離（可微調） */
+}
+/* 小標題與並列圖片樣式 */
+.inline-image-section {
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+.inline-image-section .section-subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.inline-image-section .inline-images .img-block {
+  padding: 6px;
+}
+.inline-image-section .inline-images .img-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* 手機時改為直列並增加間距 */
+@media (max-width: 767px) {
+  .inline-image-section .inline-images .img-block {
+    padding: 4px 0;
+  }
+}
+</style>
+<!--
+
+Tooplate 2125 ArtXibition
+
+https://www.tooplate.com/view/2125-artxibition
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    
+    <!-- ***** Pre HEader ***** -->
+    <div class="pre-header" role="region" aria-label="Event announcement">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <span id="preHeaderText">Hey! The conference is Starting in <strong id="daysRemaining">15</strong> Days.</span>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="text-button">
+                        <a href="rent-venue.html" class="btn" aria-label="Contact us about renting a venue">Contact Us Now! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">ICAST<em>2026</em></a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li> 
+                            <li><a href="tickets.html">Registration</a></li>
+                            <li><a href="shows-events.html">Submission</a></li> 
+                            <li><a href="ticket-details.html">Program</a></li>
+                            <li><a href="event-details.html">Attraction</a></li>
+                            <li><a href="rent-venue.html" class="active">Venue</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <div class="tickets-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="heading">
+                        <h2>Conference Venue</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <p class="tickets-lead">
+                        HKUST
+                    </p>
+                    <p>
+                        The conference will be held at the Hong Kong University of Science and Technology (HKUST), located in Clear Water Bay, Kowloon, Hong Kong. HKUST is renowned for its cutting-edge research facilities and beautiful campus, providing an ideal environment for academic exchange and networking.
+                    </p>
+                </div>
+                <div class="col-lg-12 inline-image-section" aria-labelledby="localAttractionsTitle">
+                  <div class="row inline-images" role="group" aria-label="Two images side by side">
+                    <div class="col-md-6 img-block">
+                      <img src="assets/images/HKUST1.jpg" alt="HKUST 1">
+                    </div>
+                    <div class="col-md-6 img-block">
+                      <img src="assets/images/HKUST2.png" alt="HKUST 2">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                    <p class="tickets-lead">
+                        Lo Kwee-Seong Building
+                    </p>
+                    <p>
+                        Most of the conference sessions will be held in the Lo Kwee-Seong Building, which features multiple lecture halls and numerous classrooms. All venues are outfitted with modern amenities to facilitate dynamic presentations and discussions.
+                    </p>
+                </div>
+                <div class="col-lg-12 inline-image-section" aria-labelledby="localAttractionsTitle">
+                  <div class="row inline-images" role="group" aria-label="Two images side by side">
+                    <div class="col-md-6 img-block">
+                      <img src="assets/images/lta.jpg" alt="HKUST 1">
+                    </div>
+                    <div class="col-md-6 img-block">
+                      <img src="assets/images/img_contact_hkust.jpg" alt="HKUST 2">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="heading">
+                        <h2>Transpotation</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <p class="tickets-lead">
+                        From the Airport
+                    </p>
+                    <p>By MTR</p>
+                    <p>
+                        1.Take Airport Express to “Tsing Yi Station”
+                    </p>
+                    <p>2.Transfer to Tung Chung Line to Lai King Station and than tansfer to Tsuen Wan Line to Mong Kok Station</p>
+                    <p>3.Transfer to Kwun Tong Line and get off at Choi Hung Station from Exit C1</p>
+                    <p>4.Take the minibus No.11 to HKUST</p>
+                    <p>By Bus</p>
+                    <p>
+                        1.Take Cityflyer A28 and get off at Station "Kei Shun Special School;New Clear Water Bay Road"
+                    </p>
+                    <p>
+                        2.Transfer to Bus 91M to HKUST
+                    </p>
+                    <p class="tickets-lead">
+                        From the Railway Station
+                    </p>
+                    <p>1.Take Tuen Ma Line to Diamond Hill Station and then transfer to Kwun Tong Line and get off at Choi Hung Station from Exit C1</p>
+                    <p>
+                        2.Take the minibus No.11 to HKUST
+                    </p>
+                    <p class="tickets-lead">
+                        By taxi
+                    </p>
+                    <p>Taxis are usually hailed along the street, you may wait for taxis either a taxi queue at a hotel or a taxi stand. All taxis are metered and the taxi fare information is listed on the inside of the taxi. You may ask for a machine-printed receipt from drivers.</p>
+                </div>
+                <div class="col-lg-12">
+                    <div class="heading">
+                        <h2>Hotel Options</h2>
+                    </div>
+                </div>
+    <!-- ***** About Us Page ***** 
+    <div class="page-heading-rent-venue">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Are You Looking For A Venue?</h2>
+                    <span>Check out our venues, pick your choice and fill the reservation application.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rent-venue-tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <ul>
+                                          <li><a href='#tabs-1'>Madison Square Garden</a></li>
+                                          <li><a href='#tabs-2'>Radio City Musical Hall</a></a></li>
+                                          <li><a href='#tabs-3'>Royce Hall</a></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4">
+                                          <div class="main-dark-button">
+                                              <a href="ticket-details.html">Purchase Tickets</a>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <div class="right-content">
+                                                <h4>Madison Square Garden</h4>
+                                                <p>ArtXibition Event Template is brought to you by Tooplate website and it included total 7 HTML pages. 
+                        These are <a href="index.html">Homepage</a>, <a href="about.html">About</a>, 
+                        <a href="rent-venue.html">Rent a venue</a>, <a href="shows-events.html">shows &amp; events</a>, 
+                        <a href="event-details.html">event details</a>, <a href="tickets.html">tickets</a>, and <a href="ticket-details.html">ticket details</a>. 
+                        You can feel free to modify any page as you like. If you have any question, please visit our <a href="https://www.tooplate.com/contact" target="_blank">Contact page</a>.
+                        
+                        <br><br>If you need the latest HTML templates, you may visit <a href="https://www.toocss.com/" target="_blank">Too CSS</a> website that features a great collection of templates in different categories.</p>
+                                                <ul class="list">
+                                                    <li>Madison Square Garden</li>
+                                                    <li>$2,840 per day</li>
+                                                    <li>860 Guests</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div id="map">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7405.690436500271!2d-43.289281240686606!3d-23.00173786750551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd6d13e950037%3A0x2c49dc1b12837f3f!2sPedra%20da%20G%C3%A1vea!5e1!3m2!1sen!2sth!4v1630941277488!5m2!1sen!2sth" width="100%" height="240px" frameborder="0" style="border:0"  allowfullscreen="" loading="lazy"></iframe>
+                                                <h5>Any Question?</h5>
+                                                <p>Tumeric air affogato sare torial waistcoat denim stumber.</p>
+                                            <div class="text-button">
+                                                <a href="ticket-details.html">Need Direction? <i class="fa fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>                            
+                                <article id='tabs-2'>
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <div class="right-content">
+                                                <h4>Radio City Musical Hall</h4>
+                                                <p> Aliquam tempor, purus vitae ullamcorper rhoncus, quam nunc imperdiet sem, sed placerat purus dui in lorem. Donec ornare at risus in varius. In at magna ante. Curabitur at metus sed purus pretium ullamcorper. Cras vitae sapien bibendum urna pulvinar faucibus. Aliquam sed dui in orci tincidunt cursus quis non tellus. Vestibulum a placerat ex, ac cursus dui.</p>
+                                                <ul class="list">
+                                                    <li>Radio City Musical Hall</li>
+                                                    <li>$4,750 per day</li>
+                                                    <li>1,100 Guests</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div id="map">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14678.414668643849!2d-43.19038460753291!3d-22.96913839717705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd54579a5956b%3A0xa102deeaffcb3e3!2sCopacabana%20Beach!5e1!3m2!1sen!2sth!4v1630941170951!5m2!1sen!2sth" width="100%" height="240px" frameborder="0" style="border:0" allowfullscreen="" loading="lazy"></iframe>
+                                                <h5>Any Question?</h5>
+                                                <p>Tumeric air affogato sare torial waistcoat denim stumber.</p>
+                                            <div class="text-button">
+                                                <a href="ticket-details.html">Need Direction? <i class="fa fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>   
+                                <article id='tabs-3'>
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <div class="right-content">
+                                                <h4>Royce Hall</h4>
+                                                <p> Maecenas ut pharetra felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ut nisi quis tellus vulputate posuere. Aenean consectetur quam et quam fringilla, nec aliquam diam congue. Nulla dui arcu, aliquam sed mattis non, euismod vitae libero. </p>
+                                                <ul class="list">
+                                                    <li>Madison Square Garden</li>
+                                                    <li>$5,860 per day</li>
+                                                    <li>1,250 Guests</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div id="map">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.724034173435!2d-43.27685374322357!3d-23.003403908758767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd6cbe74edde3%3A0x14e89f87adc702cc!2sMirante%20Ciclovia%20Sao%20Conrado!5e1!3m2!1sen!2sth!4v1630941324692!5m2!1sen!2sth" width="100%" height="240px" frameborder="0" style="border:0" allowfullscreen="" loading="lazy"></iframe>
+                                                <h5>Any Question?</h5>
+                                                <p>Tumeric air affogato sare torial waistcoat denim stumber.</p>
+                                            <div class="text-button">
+                                                <a href="ticket-details.html">Need Direction? <i class="fa fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>    
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rent-venue-application">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="heading-text">
+                        <h4>Reservation Application</h4>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contact" action="" method="post">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Your Name*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="phone-number" type="text" id="phone-number" placeholder="Phone Number*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="company-organization" type="text" id="company-organization" placeholder="Company / Organization*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="venue-requested" type="text" id="venue-requested" placeholder="Venue Requested*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="type-event" type="text" id="type-event" placeholder="Type Of Event*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="date-requested-first" type="text" id="date-requested-first" placeholder="Date Requested (Primary Date)*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="date-requested-second" type="text" id="date-requested-second" placeholder="Date Requested (Secondary Date)*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="about-event-hosting" rows="6" id="about-event-hosting" placeholder="About The Event You Are Hosting" required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-dark-button">Submit Request</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     *** Subscribe *** 
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>Subscribe Our Newsletter:</h4>
+                </div>
+                <div class="col-lg-8">
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-3">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button">Submit</button>
+                            </fieldset>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    *** Footer *** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="address">
+                        <h4>HKUST</h4>
+                        <span>Clear Water Bay, <br>Kowloon<br>Hong Kong</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="https://pathadvisor.ust.hk/from/to/ROOM%201104;KETJ3jsuiZ4s;1;780,492/floor/1/at/normalized/780,492,4">Map of school</a></li>
+                            <li><a href="rent-venue.html">Venues and traffics</a></li>
+                            <li><a href="https://hkust.edu.hk/">About HKUST</a></li>
+                            <li><a href="https://www.discoverhongkong.com/tc/index.html">Travel in Hong Kong</a></li>
+                            <li><a href="mailto:yzhangtk@connect.ust.hk"><EMAIL>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="hours">
+                        <h4>Important Dates</h4>
+                        <ul>
+                            <li>Abstract deadline: December 15, 2025</li>
+                            <li>Author notification: January 15, 2024  1月 15, 2026</li>
+                            <li>Full paper deadline: June 15, 2026</li>
+                            <li>Journal special issue deadline: After June 15</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <p>Welcome to ICAST 2026</p>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <p class="copyright">Copyright 2021 ArtXibition Company 
+                    
+                    			<br>Design: <a rel="nofollow" href="https://www.tooplate.com" target="_parent">Tooplate</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="sub-footer">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="logo"><span>ICAST<em>2026</em></span></div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="menu">
+                                    <ul>
+                                        <li><a href="index.html" class="active">Home</a></li>
+                                        <li><a href="about.html">About</a></li> 
+                                        <li><a href="tickets.html">Registration</a></li>
+                                        <li><a href="shows-events.html">Submission</a></li> 
+                                        <li><a href="venue.html">Program</a></li>
+                                        <li><a href="contact.html">Attraction</a></li>
+                                        <li><a href="rent-venue.html">Venue</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/mixitup.js"></script> 
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <!-- Unified countdown (替换掉之前的 Dynamic pre-header days counter) -->
+    <script>
+    (function(){
+      // 设置目标开幕日期（请根据需要修改，采用 UTC 时间避免时区差异）
+      var target = new Date('2026-05-20T00:00:00Z');
+
+      function updateAll(){
+        var now = new Date();
+        var diffMs = target - now;
+        if (isNaN(diffMs)) return;
+
+        var totalSeconds = Math.max(0, Math.floor(diffMs / 1000));
+        var days = Math.floor(totalSeconds / 86400);
+        var hours = Math.floor((totalSeconds % 86400) / 3600);
+        var minutes = Math.floor((totalSeconds % 3600) / 60);
+        var seconds = totalSeconds % 60;
+
+        var elDays = document.getElementById('days');
+        var elHours = document.getElementById('hours');
+        var elMinutes = document.getElementById('minutes');
+        var elSeconds = document.getElementById('seconds');
+        var elDaysRemaining = document.getElementById('daysRemaining');
+        var preHeaderText = document.getElementById('preHeaderText');
+
+        if (elDays) elDays.textContent = days;
+        if (elHours) elHours.textContent = ('0'+hours).slice(-2);
+        if (elMinutes) elMinutes.textContent = ('0'+minutes).slice(-2);
+        if (elSeconds) elSeconds.textContent = ('0'+seconds).slice(-2);
+        if (elDaysRemaining) elDaysRemaining.textContent = days;
+
+        if (diffMs > 0) {
+          if (preHeaderText) preHeaderText.setAttribute('aria-live', 'polite');
+        } else if (diffMs > -24*60*60*1000) {
+          if (preHeaderText) preHeaderText.textContent = 'The show is today!';
+        } else {
+          if (preHeaderText) preHeaderText.textContent = 'The show has started.';
+        }
+      }
+
+      updateAll();
+      // 每秒更新，保持秒表同步
+      setInterval(updateAll, 1000);
+    })();
+    </script>
+  </body>
+</html>
