@@ -126,8 +126,8 @@ https://www.tooplate.com/view/2125-artxibition
                     <div class="left-inner">
                         <div class="left-content">
                             <h4>Welcome to ICAST2026</h4>
-                            <p>It is our pleasure to invite you to the 34rd International Conference on Adaptive Structures and Technologies (ICAST 2026), which will be held in person from May 20-22, 2026, in Hong Kong.</p>
-                            <p>ICAST is a series of international conferences dating back to its launch in 1990 as a joint USA‑Japan conference held in Maui in its first year. For more than three decades, ICAST has been held at various locations in North America, Asia, and Europe. ICAST 2026 is the 34rd of these successful conferences aiming to bring together researchers exploring a broad range of topics in smart/adaptive structures.</p>
+                            <p>It is our pleasure to invite you to the 35th International Conference on Adaptive Structures and Technologies (ICAST 2026), which will be held in person from June 01-03, 2026, in Hong Kong.</p>
+                            <p>ICAST is a series of international conferences dating back to its launch in 1990 as a joint USA-Japan conference held in Maui in its first year. For more than three decades, ICAST has been held at various locations in North America, Asia, and Europe. ICAST 2026 is the 35th of these successful conferences aiming to bring together researchers exploring a broad range of topics in smart/adaptive structures.</p>
                             <p>Organized by the <a href="https://yanglab.hkust.edu.hk/" target="_blank" rel="noopener">Smart Transducer and Vibration Lab</a>, ICAST 2026 will be hosted at the <a href="https://hkust.edu.hk/" target="_blank" rel="noopener">Hong Kong University of Science and Technology(HKUST)</a>.</p>
                             <p>We invite you to join us at ICAST 2026, and we look forward to meeting you in Hong Kong!</p>
                         </div>
@@ -164,7 +164,37 @@ https://www.tooplate.com/view/2125-artxibition
             </div>
         </div>
     </div>
+    <div class="amazing-venues">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Committee</h1>
+                </div>
+                <div class="col-lg-9">
+                    <div class="left-inner">
+                        <div class="left-content">
+                            <h4>Conference chair</h4>
+                            <ul class="committee-list">
+                               <li>Z. Yang, Hong Kong University of Science and Technology</li>
+                            </ul>
 
+                            <h4>Local organizing committee</h4>
+                            <ul id="local-committee" class="committee-list" aria-label="Local organizing committee list">
+                                <!-- 可手动添加或用脚本填充 -->
+                                <li>（本地委员名单）</li>
+                            </ul>
+
+                            <h4>International organizing committee</h4>
+                            <ul id="intl-committee" class="committee-list" aria-label="International organizing committee list"></ul>
+                        </div>   
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-area section-padding-80-0">
 
     <!-- ***** About Us Page ***** 
     <div class="page-heading-about">
@@ -452,6 +482,47 @@ https://www.tooplate.com/view/2125-artxibition
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+
+    <!-- SheetJS: 从 .xlsx 读取人名并填充 #intl-committee 列表 -->
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script>
+    (function(){
+      function loadXlsx(url, ulId, colIdentifier){
+        fetch(url).then(r => r.arrayBuffer()).then(ab => {
+          const data = new Uint8Array(ab);
+          const wb = XLSX.read(data, {type: 'array'});
+          const ws = wb.Sheets[wb.SheetNames[0]];
+          const rows = XLSX.utils.sheet_to_json(ws, {header:1});
+          if(!rows || rows.length === 0) return;
+
+          let colIndex = (typeof colIdentifier === 'number') ? colIdentifier : 0;
+          if(typeof colIdentifier === 'string'){
+            const header = rows[0].map(c => String(c || '').trim().toLowerCase());
+            const idx = header.indexOf(colIdentifier.trim().toLowerCase());
+            if(idx >= 0) colIndex = idx;
+          }
+
+          const ul = document.getElementById(ulId);
+          if(!ul) return;
+          ul.innerHTML = '';
+
+          const start = (typeof colIdentifier === 'string' && rows[0].some(Boolean)) ? 1 : 0;
+          for(let r = start; r < rows.length; r++){
+            const row = rows[r];
+            const name = row && row[colIndex] ? String(row[colIndex]).trim() : '';
+            if(name){
+              const li = document.createElement('li');
+              li.textContent = name;
+              ul.appendChild(li);
+            }
+          }
+        }).catch(e => console.error('读取 xlsx 失败:', e));
+      }
+
+      // 调整以下路径与列标识（列名或索引）：
+      loadXlsx('assets/data/ICAST_IOC Committee_2025.xlsx', 'intl-committee', 'IOC Member');
+    })();
+    </script>
 
     <!-- Unified countdown (替换掉之前的 Dynamic pre-header days counter) -->
     <script>
