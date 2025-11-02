@@ -27,14 +27,55 @@
         font-size: 1.125rem; /* 可調：1rem 為預設，增大到 1.125rem */
         line-height: 1.4;
         font-weight: 500;
-        margin-bottom: 0.75rem;
+        margin: 0 0 0.75rem 0;
         }
 
         /* 小螢幕適度回縮 */
         @media (max-width: 767px) {
         .tickets-lead { font-size: 1rem; }
         } 
+        /* 新增：当需要两段之间无额外间隔时，给 p 加上 no-gap 类 */
+        /* no-gap 行为规则：
+           - 普通 + no-gap => 无间距
+           - no-gap + no-gap => 无间距
+           - no-gap + 普通 => 恢复正常间距（0.75rem）
+        */
+        .tickets-lead.no-gap {
+          margin: 0 !important;
+          padding: 0 !important;
+          line-height: 1.4;
+        }
+        /* 普通段落后接 no-gap：去掉 no-gap 的上间距（保证无间隔） */
+        .tickets-lead + .tickets-lead.no-gap {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        /* no-gap 后接普通段落：恢复正常上间距 */
+        .tickets-lead.no-gap + .tickets-lead {
+          margin-top: 0.75rem !important;
+          margin-bottom: 0 !important;
+        }
+        /* 连续两个 no-gap：无间距 */
+        .tickets-lead.no-gap + .tickets-lead.no-gap {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+        /* 减小 Registration Guideline 标题与下面文字的间距 */
+       .tickets-page .heading { margin-bottom: 0.25rem; }
+       .tickets-page .heading h2 { margin: 0 0 0.5rem 0; font-size: 1.75rem; }
+       /* --- 新增：增加与上方图片/横幅的间距（可调整数值） --- */
+        /* 增加页面标题区（含背景图/横幅）与 tickets 内容的间距 */
+        .page-heading-shows-events { margin-bottom: 36px; } /* 控制标题区与下方内容的距离 */
+        /* 额外保障：在 tickets 区块增加上内边距，避免与上方紧贴 */
+        .tickets-page { padding-top: 18px; }
+
+        /* 手机端适配，缩小间距 */
+        @media (max-width: 767px) {
+          .page-heading-shows-events { margin-bottom: 20px; }
+          .tickets-page { padding-top: 10px; }
+        }
     </style>
+    
 <!--
 
 Tooplate 2125 ArtXibition
@@ -168,17 +209,101 @@ https://www.tooplate.com/view/2125-artxibition
                         </form>
                     </div>
                 </div>-->
-                <div class="col-lg-12">
+                <div class="heading" style="text-align:left;">
                     <div class="heading">
                         <h2>Registration Guideline</h2>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <p class="tickets-lead">
-                        1.Please complete your registration and payment online via the link below.
+                        1.Please finish the registration form.
                     </p>
                 </div>
-                <div class="col-lg-6">
+                <!-- 居中黑底白字按钮：点击完成注册 -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center" style="margin:24px 0;">
+                            <a href="ticket-details.html" class="finish-registration-btn" role="button" aria-label="Finish registration">Click Here to Finish Registration</a>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .finish-registration-btn{
+                    display:inline-block;
+                    background:#000;
+                    color:#fff;
+                    padding:12px 28px;
+                    text-decoration:none;
+                    border-radius:6px;
+                    font-weight:600;
+                }
+                .finish-registration-btn:hover,
+                .finish-registration-btn:focus{
+                background:#111;
+                color:#fff;
+                outline:2px solid rgba(255,255,255,0.08);
+                outline-offset:2px;
+                }
+                </style>
+                <div class="col-lg-12">
+                    <p class="tickets-lead">
+                        2.Registration Fees:
+                    </p>
+                </div>
+                <!-- 费用表（无表框，交替行背景色，居中） -->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="table-wrapper" style="max-width:900px;margin:0 auto;">
+                        <table class="price-table" role="table" aria-label="Registration fees">
+                          <tr>
+                            <td><strong>Registration Category</strong></td>
+                            <td><strong>Regular<br>(After Apr. 19)</strong></td>
+                            <td><strong>Early-bird<br>(Before Apr. 19)</strong></td>
+                          </tr>
+                          <tr>
+                            <td>Regular participant</td>
+                            <td>HKD $ 5830 / US $ 750 / RMB ￥5340</td>
+                            <td>HKD $ 5440 / US $ 700 / RMB ￥4980</td>
+                          </tr>
+                          <tr>
+                            <td>Student</td>
+                            <td>HKD $ 2915 / US $ 375 / RMB ￥2670</td>
+                            <td>HKD $ 2720 / US $ 350 / RMB ￥2490</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <style>
+                  /* 无边框表格，行交替背景色 */
+                  .price-table{
+                    width:100%;
+                    border-collapse:collapse;
+                    border-spacing:0;
+                    margin:12px 0 24px 0;
+                    border:none;
+                  }
+                  .price-table td{
+                    padding:12px 16px;
+                    vertical-align:middle;
+                    text-align:left;
+                    border:none;
+                    font-size:1rem;
+                  }
+                  /* 交替背景色：第一行为浅灰（表头），之后行交替 */
+                  .price-table tr:nth-child(1){ background:#f0f0f0; }
+                  .price-table tr:nth-child(2n){ background:#fafafa; }
+                  .price-table tr:nth-child(2n+1):not(:first-child){ background:#ffffff; }
+                  .price-table td strong{ font-weight:700; }
+                  @media (max-width:767px){
+                    .price-table td{ font-size:0.95rem; padding:10px 12px; }
+                  }
+                </style>
+                <!--<div class="col-lg-6">
                     <div class="ticket-item">
                         <div class="thumb">
                             <img src="assets/images/regular-ticket.jpg" alt="">
@@ -261,22 +386,86 @@ https://www.tooplate.com/view/2125-artxibition
                             </div>
                         </div>
                     </div>
+                </div>-->
+                <div class="col-lg-12">
+                    <p class="tickets-lead">
+                        3.If you need an <strong>invitation letter</strong>, please contact the conference secretariat at: <a href="mailto:yzhangtk@connect.ust.hk"><EMAIL>yzhangtk@connect.ust.hk</a>
+                    </p>
+                </div>
+                <div class="heading" style="text-align:left;">
+                    <div class="heading">
+                        <h2>Note:</h2>
+                    </div>
                 </div>
                 <div class="col-lg-12">
                     <p class="tickets-lead">
-                        2.If you need an invitation letter, please contact the conference secretariat at: <a href="mailto:yzhangtk@connect.ust.hk"><EMAIL>yzhangtk@connect.ust.hk</a>
+                        1.<strong>All presenters and attendees</strong>  have to register online.
                     </p>
                 </div>
                 <div class="col-lg-12">
                     <p class="tickets-lead">
-                        3.Student Registration: Student registrants must send relevant studentship proof document which indicates your full-time undergraduate or postgraduate student status to <a href="mailto:yzhangtk@connect.ust.hk"><EMAIL>yzhangtk@connect.ust.hk</a>. Please include [STUDENTSHIP] at the beginning of your email's subject line.
+                        2.<strong>Student Registration</strong>: Student registrants must send relevant studentship proof document which indicates your full-time undergraduate or postgraduate student status to <a href="mailto:yzhangtk@connect.ust.hk"><EMAIL>yzhangtk@connect.ust.hk</a>. Please include [STUDENTSHIP] at the beginning of your email's subject line.
                     </p>
                 </div>
                 <div class="col-lg-12">
                     <p class="tickets-lead">
-                        4.Payment, invoice and other financial services: XXX conference Co. Limited is the official provider for handling payment, invoice, and other financial services. If you have any questions, please contact us(email: xxx@gmail.org; phone: +86 13912341234).
+                        3.<strong>Payment</strong>, <strong>invoice</strong> and other <strong>financial services</strong>: XXX conference Co. Limited is the official provider for handling payment, invoice, and other financial services. If you have any questions, please contact us(email: xxx@gmail.org; phone: +86 13912341234).
                     </p>
                 </div>
+                <div class="heading" style="text-align:left;">
+                    <div class="heading">
+                        <h2>CANCELLATION AND REFUND POLICY</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <p class="tickets-lead no-gap">
+                        All conference cancellations and requests for refunds must be made in writing by the purchaser as indicated below. Requests must be sent to Event Services veh2025@ust.hk. Requests may be emailed, or mailed (contact information below).Telephone requests will not be honoured. When the conference registration fees are inclusive of morning and afternoon teas, lunches, welcome reception, conference dinner or excursions, no discount or refunds are available for delegates who do not wish to attend these events.
+                    </p>
+                    <p class="tickets-lead no-gap">
+                        Registrations are not fully refundable. In all cases, an administration charges will always be payable. Administration charges vary. Please contact Event Services to establish the applicable charge for your Conference.
+                    </p>
+                    <p class="tickets-lead">
+                        Partial Refunds – To receive a partial refund of 50%, Event Services must receive written requests no later than 45 days prior. Partial refunds will available at the discretion of the organising committee.
+                    </p>
+                    <p class="tickets-lead no-gap">
+                        No Refunds – Requests for refunds received by Event Services after within 14 days of the conference will not be eligible for a refund.
+                    </p>
+                    <p class="tickets-lead">
+                        No Refunds – Absentee at the conference Refunds are not available at any time for absentee delegates.
+                    </p>
+                    <p class="tickets-lead no-gap">
+                        Alternative to cancellation – Transfer Registration may be transferred to another person from your organisation. Event Services must be advised in writing of the change at least 14 days prior to the conference.
+                    </p>
+                    <p class="tickets-lead">
+                        Emergency Illness or Death of Registrant or Immediate Family Member: Refunds may be granted if an attendee is unable to attend the Conference due to a family death, illness, or other extraordinary circumstance. In such circumstances, Event Services may be contacted by phone or email.
+                    </p>
+                    <p class="tickets-lead">
+                        Event Services shall not be required to refund any fees or charges paid in addition to the Face Value of the Registration for example, any Handling Fee or postage or courier charges except where required by applicable Hong Kong law. No interest or costs will be payable in respect of any monies refunded. Neither Event Services nor the organiser will be liable for any associated costs, expenses or loss (including, without limitation, any indirect and/or consequential loss, such as for travel to the Venue or any accommodation costs).
+                    </p>
+                    <p class="tickets-lead">
+                        <strong>DISCLAIMER</strong>
+                    </p>
+                    <p class="tickets-lead">
+                        Event Services assumes no responsibility for any error, omission, interruption, deletion, defect, delay in transmission or line failure to this web site.
+                    </p>
+                    <p class="tickets-lead no-gap">
+                        Event Services and/or the organisation responsible for the event reserves the right to change details on this web site at any time.
+                    </p>
+                    <p class="tickets-lead">
+                        Registration purchases are subject to the above Terms & Conditions of Sale. Please read the conditions carefully. By processing your registration on the web site you are agreeing to be bound by these Terms & Conditions.
+                    </p>
+                    <p class="tickets-lead no-gap">
+                        Admission to a Venue will only be authorised upon presentation of a valid and paid registration.
+                    </p>
+                    <p class="tickets-lead">
+                        Admission to a Venue will be refused to any person noticeably under the influence of alcohol, narcotics or any behaviour-modifying substance, or to any person behaving, or considered by any Authorised Person likely to behave, violently, harmfully or in a manner contrary to public order and/or safety. Admission will also be refused to any person who attempts to bring any Prohibited Item into a Venue.
+                    </p>
+                    <p class="tickets-lead no-gap">
+                        Event Services nor the organising committee (all members collectively known as ‘the organisers’) of all Conferences cannot accept any liability for changes in venues, dates and programme if such changes are caused or results from the act, default or omission of any person other than an employee or agent of the organisers.
+                    </p>
+                    <p class="tickets-lead">
+                        Event Services nor the organising committee (all members collectively known as ‘the organisers’) of all Conferences cannot accept any liability for death, injury, any loss, cost or expense suffered by any person (including accompanying persons, partner, or attendant caregivers), if such a loss is caused or results from the act, default or omission of any person other than an employee or agent of the organisers. In particular, the organisers cannot accept liability for losses arising from the provision or non-provision of services provided by hotel companies or transport operators. Nor can the organisers accept liability for losses suffered by reason of war including threat of war, riots, civil strife, terrorist activities, natural disasters, weather, fire, flood, drought, disease pandemic, technical, mechanical or electrical breakdown within any premises visited by delegates and/or partners in connection with the conference. The organisers are not able to guarantee that any particular person will appear as a speaker or panelist.
+                    </p>
             </div>
         </div>
     </div>
