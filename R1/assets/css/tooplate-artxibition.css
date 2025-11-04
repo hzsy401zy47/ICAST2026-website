@@ -107,7 +107,7 @@ ul {
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 25px;
   color: #2a2a2a;
   font-weight: 300;
@@ -746,6 +746,12 @@ Amazing Venues
   margin-bottom: 0px;
 }
 
+.amazing-venues .left-content p {
+  font-size: 17px;
+  color: #2a2a2a;
+  line-height: 25px;
+  font-weight: 300;
+}
 .amazing-venues .right-content {
   margin-left: 30px;
 }
@@ -775,6 +781,7 @@ Amazing Venues
   width: 100%;
   overflow: hidden;
 }
+
 
 
 /*
