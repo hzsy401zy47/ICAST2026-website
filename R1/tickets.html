@@ -219,32 +219,44 @@ https://www.tooplate.com/view/2125-artxibition
                         1.Please finish the registration form.
                     </p>
                 </div>
-                <!-- 居中黑底白字按钮：点击完成注册 -->
+                <!-- 并排等距三按钮：港币 / 人民币 / 美元 付款 -->
                 <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center" style="margin:24px 0;">
-                            <a href="ticket-details.html" class="finish-registration-btn" role="button" aria-label="Finish registration">Click Here to Finish Registration</a>
-                        </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="payment-row" style="max-width:720px;margin:24px auto;display:flex;gap:16px;">
+                        <a href="https://www.cognitoforms.com/FarLandTechnologyHKCoLimited/ICAST2026RegistrationFormPayInHKD" class="payment-btn" role="button" aria-label="Pay in Hong Kong Dollar">Register (HKD)</a>
+                        <a href="https://www.cognitoforms.com/FarLandTechnologyHKCoLimited/ICAST2026RegistrationFormPayInCNY" class="payment-btn" role="button" aria-label="Pay in Renminbi">Register (RMB)</a>
+                        <a href="https://www.cognitoforms.com/FarLandTechnologyHKCoLimited/ICAST2026RegistrationFormPayInUSD" class="payment-btn" role="button" aria-label="Pay in US Dollar">Register (USD)</a>
+                      </div>
                     </div>
+                  </div>
                 </div>
 
                 <style>
-                    .finish-registration-btn{
+                  .payment-row .payment-btn{
+                    flex:1;
                     display:inline-block;
+                    text-align:center;
                     background:#000;
                     color:#fff;
-                    padding:12px 28px;
+                    padding:12px 16px;
                     text-decoration:none;
                     border-radius:6px;
                     font-weight:600;
-                }
-                .finish-registration-btn:hover,
-                .finish-registration-btn:focus{
-                background:#111;
-                color:#fff;
-                outline:2px solid rgba(255,255,255,0.08);
-                outline-offset:2px;
-                }
+                    min-width:0; /* 允许运行时收缩 */
+                  }
+                  .payment-row .payment-btn:hover,
+                  .payment-row .payment-btn:focus{
+                    background:#111;
+                    color:#fff;
+                    outline:2px solid rgba(255,255,255,0.06);
+                    outline-offset:2px;
+                  }
+                  /* 小屏幕堆叠显示 */
+                  @media (max-width:576px){
+                    .payment-row{ flex-direction:column; }
+                    .payment-row .payment-btn{ width:100%; }
+                  }
                 </style>
                 <div class="col-lg-12">
                     <p class="tickets-lead">
